@@ -18,6 +18,7 @@ export function Form() {
     contacts.find(contact => contact.name.toLowerCase() === name.toLowerCase())
       ? alert(`Kонтакт ${name[0].toUpperCase() + name.slice(1)} уже есть`)
       : dispatch(recording({ name, number, id: shortid.generate() }));
+    event.currentTarget.reset();
   };
 
   return (
